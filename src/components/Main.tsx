@@ -5,7 +5,7 @@ interface MainProps {
 }
 
 function Main({ children }: MainProps) {
-  return <main className="border border-red-500 h-screen">{children}</main>;
+  return <main className="h-screen mx-auto">{children}</main>;
 }
 
 export default Main;

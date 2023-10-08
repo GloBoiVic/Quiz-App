@@ -1,7 +1,7 @@
 import { Loader as Spinner } from 'lucide-react';
 export default function Loader() {
   return (
-    <div className="w-2/3 flex gap-4 items-center justify-center rounded-lg mx-auto mt-24  md:mt-48 ">
+    <div className="w-2/3 flex gap-4 items-center justify-center rounded-lg mx-auto mt-24 md:mt-48 ">
       <span>
         <Spinner />
       </span>
