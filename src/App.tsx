@@ -75,18 +75,11 @@ function App() {
       <div className="max-w-screen h-screen mx-auto">
         <Header />
         <Main>
-          <motion.div
-            animate={{ x: 100 }}
-            transition={{
-              ease: 'linear',
-              duration: 2,
-              x: { duration: 1 },
-            }}
-          >
+          <>
             {status === 'loading' && <Loader />}
             {status === 'error' && <Error />}
             {status === 'ready' && <StartScreen totalQuestions={totalQuestions} onStart={startQuiz} />}
-          </motion.div>
+          </>
         </Main>
       </div>
     </ThemeProvider>
