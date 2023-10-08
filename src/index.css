@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 108 28% 93%;
+    --foreground: 108 28% 7%;
+    --card: 108 28% 93%;
+    --card-foreground: 108 28% 7%;
+    --popover: 108 28% 93%;
+    --popover-foreground: 108 28% 7%;
+    --primary: 137 29% 33%;
+    --primary-foreground: 108 28% 93%;
+    --secondary: 171 28% 82%;
+    --secondary-foreground: 108 28% 7%;
+    --muted: 109 27% 20%;
+    --muted-foreground: 107 28% 70%;
+    --accent: 169 29% 42%;
+    --accent-foreground: 108 28% 7%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 108 28% 7%;
+    --border: 109 27% 20%;
+    --input: 109 27% 20%;
+    --ring: 169 29% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 108 28% 7%;
+    --foreground: 108 28% 93%;
+    --card: 108 28% 7%;
+    --card-foreground: 108 28% 93%;
+    --popover: 108 28% 7%;
+    --popover-foreground: 108 28% 93%;
+    --primary: 138 29% 67%;
+    --primary-foreground: 108 28% 7%;
+    --secondary: 171 28% 18%;
+    --secondary-foreground: 108 28% 93%;
+    --muted: 109 27% 80%;
+    --muted-foreground: 108 28% 93%;
+    --accent: 169 29% 58%;
+    --accent-foreground: 108 28% 7%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 108 29% 10%;
+    --border: 108 28% 60%;
+    --input: 109 27% 80%;
+    --ring: 169 29% 60%;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
