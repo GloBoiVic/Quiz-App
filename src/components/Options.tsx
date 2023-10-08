@@ -1,14 +1,10 @@
 import { Button } from './ui/button';
 import clsx from 'clsx';
+import { TQuestion } from './utils/types';
 
 interface OptionsProps {
-  question: {
-    correctOption: number;
-    options: string[];
-    points: number;
-    question: string;
-  };
-  answer: null;
+  question: TQuestion;
+  answer: number | null;
   onAnswer: (data: number) => void;
 }
 

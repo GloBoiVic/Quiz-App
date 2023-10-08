@@ -1,7 +1,15 @@
 import { MoveRightIcon } from 'lucide-react';
 import { Button } from './ui/button';
 
-function NextButton({ onNextQuestion, onEndScreen, answer, index, totalQuestions }) {
+interface NextButtonProps {
+  answer: number | null;
+  index: number;
+  totalQuestions: number;
+  onNextQuestion: () => void;
+  onEndScreen: () => void;
+}
+
+function NextButton({ onNextQuestion, onEndScreen, answer, index, totalQuestions }: NextButtonProps) {
   if (answer === null) return null;
 
   if (index < totalQuestions - 1)

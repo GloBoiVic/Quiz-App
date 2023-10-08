@@ -1,17 +1,13 @@
 import Options from './Options';
+import { TQuestion } from './utils/types';
 
 // type TQuestion = {
 //   question: string;
 // };
 
 interface QuestionProps {
-  question: {
-    correctOption: number;
-    options: string[];
-    points: number;
-    question: string;
-  };
-  answer: null;
+  question: TQuestion;
+  answer: number | null;
   onAnswer: (data: number) => void;
 }
 
