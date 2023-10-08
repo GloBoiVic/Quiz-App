@@ -159,7 +159,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="h-screen mx-auto max-w-screen">
-        <div className="container max-w-xl border">
+        <div className="container max-w-xl">
           <Header />
           <Main>
             {status === 'loading' && <Loader />}
