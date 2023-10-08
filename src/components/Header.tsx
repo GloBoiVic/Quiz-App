@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <header className="border-2 flex items-center border-gray-500 justify-around h-16">
+    <header className="flex items-center justify-around h-16 border-b-gray-500">
       <img src="react.svg" className="w-12" alt="React logo" />
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">The React Quiz</h1>
+      <h1 className="text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">The React Quiz</h1>
     </header>
   );
 }
