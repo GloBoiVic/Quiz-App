@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-import 'tailwindcss-animate';
+import { nextui } from '@nextui-org/react';
+
 export default {
   darkMode: ['class'],
-  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
-  safelist: ['dark'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
       center: true,
@@ -12,65 +12,45 @@ export default {
         '2xl': '1400px',
       },
     },
-    extend: {
-      colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
-      fontFamily: {
-        poppins: 'Poppins, sans-serif',
-      },
+
+    fontFamily: {
+      robotoFlex: 'Roboto Flex, sans-serif',
     },
   },
-  plugins: ['tailwindcss-animate'],
+  plugins: [
+    nextui({
+      layout: {
+        radius: {
+          small: '2px', // rounded-small
+          medium: '4px', // rounded-medium
+          large: '6px', // rounded-large
+        },
+        borderWidth: {
+          small: '1px', // border-small
+          medium: '1px', // border-medium
+          large: '2px', // border-large
+        },
+      },
+      themes: {
+        light: {
+          colors: {
+            foreground: '#141013',
+            background: '#ffffff',
+            primary: '#c0cec4',
+            secondary: '#ebefee',
+            accent: '#7f9778',
+          },
+        },
+        dark: {
+          colors: {
+            foreground: '#efebee',
+            background: '#000000',
+            primary: '#313f35',
+            secondary: '#101413',
+            accent: '#708768',
+          },
+        },
+      },
+    }),
+  ],
 };
