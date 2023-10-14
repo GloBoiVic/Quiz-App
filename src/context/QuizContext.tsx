@@ -46,11 +46,11 @@ type ReducerAction =
 
 const initialState: State = {
   questions: [],
-  totalQuestions: null,
+  totalQuestions: 0,
   status: 'loading',
   index: 0,
   points: 0,
-  totalPoints: null,
+  totalPoints: 0,
   answer: null,
   highScore: 0,
   secondsRemaining: null,
@@ -69,7 +69,7 @@ function reducer(state: State, action: ReducerAction): typeof initialState {
       return { ...state, status: 'error' };
 
     case REDUCER_ACTION_TYPE.START_QUIZ: {
-      return { ...state, status: 'active' };
+      return { ...state, status: 'active', secondsRemaining: state.questions.length * SECONDS_PER_QUESTION };
     }
 
     case REDUCER_ACTION_TYPE.ANSWER:
