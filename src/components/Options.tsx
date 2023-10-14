@@ -1,14 +1,12 @@
-import { Button } from './ui/button';
+import { Button } from '@nextui-org/react';
 import clsx from 'clsx';
-import { TQuestion } from './utils/types';
+import useQuiz from '../hooks/useQuiz';
 
-interface OptionsProps {
-  question: TQuestion;
-  answer: number | null;
-  onAnswer: (data: number) => void;
-}
+function Options() {
+  const { questions, index, handleAnswer, answer } = useQuiz();
 
-function Options({ question, onAnswer, answer }: OptionsProps) {
+  const question = questions[index];
+
   const hasAnswered = answer !== null;
 
   return (
@@ -27,7 +25,7 @@ function Options({ question, onAnswer, answer }: OptionsProps) {
             },
           )}
           disabled={answer !== null}
-          onClick={() => onAnswer(index)}
+          onClick={() => handleAnswer(index)}
         >
           {option}
         </Button>

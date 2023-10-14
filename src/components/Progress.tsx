@@ -1,12 +1,7 @@
-interface ProgressProps {
-  answer: number | null;
-  index: number;
-  points: number;
-  totalPoints: number;
-  totalQuestions: number;
-}
+import useQuiz from '../hooks/useQuiz';
 
-function Progress({ index, totalQuestions, points, totalPoints, answer }: ProgressProps) {
+function Progress() {
+  const { index, totalQuestions, points, totalPoints, answer } = useQuiz();
   return (
     <header className="grid gap-4 border place-content-between ">
       <progress

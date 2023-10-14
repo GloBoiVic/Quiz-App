@@ -1,27 +1,22 @@
 import { MoveRightIcon } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '@nextui-org/react';
+import useQuiz from '../hooks/useQuiz';
 
-interface NextButtonProps {
-  answer: number | null;
-  index: number;
-  totalQuestions: number;
-  onNextQuestion: () => void;
-  onEndScreen: () => void;
-}
+function NextButton() {
+  const { handleNextQuestion, handleEndScreen, answer, index, totalQuestions } = useQuiz();
 
-function NextButton({ onNextQuestion, onEndScreen, answer, index, totalQuestions }: NextButtonProps) {
   if (answer === null) return null;
 
   if (index < totalQuestions - 1)
     return (
       <>
-        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={onNextQuestion}>
+        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={handleNextQuestion}>
           Next
           <span className="ml-2">
             <MoveRightIcon />
           </span>
         </Button>
-        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={onNextQuestion}>
+        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={handleNextQuestion}>
           Next
           <span className="ml-2">
             <MoveRightIcon />
@@ -30,12 +25,7 @@ function NextButton({ onNextQuestion, onEndScreen, answer, index, totalQuestions
       </>
     );
 
-  if (index === totalQuestions - 1)
-    return (
-      <button className="btn btn-ui" onClick={onEndScreen}>
-        Finish
-      </button>
-    );
+  if (index === totalQuestions - 1) return <Button onClick={handleEndScreen}>Finish</Button>;
 }
 
 export default NextButton;

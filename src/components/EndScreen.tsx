@@ -1,13 +1,9 @@
-import { Button } from './ui/button';
+import useQuiz from '../hooks/useQuiz';
+import { Button } from '@nextui-org/react';
 
-interface EndScreenProps {
-  points: number;
-  totalPoints: number;
-  highScore: number;
-  onRestart: () => void;
-}
+function EndScreen() {
+  const { points, totalPoints, highScore, handleRestart } = useQuiz();
 
-function EndScreen({ points, totalPoints, highScore, onRestart }: EndScreenProps) {
   const percentage = (points / totalPoints) * 100;
 
   let emoji;
@@ -23,7 +19,7 @@ function EndScreen({ points, totalPoints, highScore, onRestart }: EndScreenProps
         <span>{emoji}</span> You scored <strong>{points}</strong> out of {totalPoints}({Math.ceil(percentage)}%)
       </p>
       <p className="mt-4 text-lg">(Highscore: {highScore} points)</p>
-      <Button className="mt-4" variant={'secondary'} onClick={onRestart}>
+      <Button className="mt-4" variant={'shadow'} onClick={handleRestart}>
         Restart Quiz
       </Button>
     </div>
