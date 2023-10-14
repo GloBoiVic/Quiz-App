@@ -5,8 +5,8 @@ function Question() {
   const { questions, index } = useQuiz();
 
   return (
-    <div className="max-w-lg mx-auto mt-10 text-center">
-      <h4 className="my-10 text-2xl font-semibold tracking-tight text-center">{questions[index].question}</h4>
+    <div className="max-w-lg mt-10 text-center">
+      <h4 className="my-10 text-xl font-semibold tracking-tight md:text-2xl">{questions[index].question}</h4>
 
       <Options />
     </div>

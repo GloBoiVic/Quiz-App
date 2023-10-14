@@ -13,7 +13,7 @@ function StartScreen() {
           {totalQuestions} questions to test your React mastery
         </h3>
         <div className="mt-5 text-center">
-          <Button variant={'ghost'} onClick={startQuiz}>
+          <Button variant={'shadow'} onClick={startQuiz}>
             Let's start
             <span className="ml-2">
               <MoveRightIcon />

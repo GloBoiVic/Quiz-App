@@ -10,13 +10,13 @@ function NextButton() {
   if (index < totalQuestions - 1)
     return (
       <>
-        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={handleNextQuestion}>
+        {/* <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={handleNextQuestion}>
           Next
           <span className="ml-2">
             <MoveRightIcon />
           </span>
-        </Button>
-        <Button className="mt-4 rounded-lg" variant={'ghost'} onClick={handleNextQuestion}>
+        </Button> */}
+        <Button className="rounded-lg" variant={'shadow'} onClick={handleNextQuestion}>
           Next
           <span className="ml-2">
             <MoveRightIcon />

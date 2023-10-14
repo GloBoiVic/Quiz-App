@@ -14,18 +14,15 @@ function Options() {
       {question.options.map((option, index) => (
         <Button
           key={option}
-          className={clsx(
-            'justify-start rounded-full py-2 px-6 text-lg transition duration-500   inline-flex text-white/90 ',
-            {
-              'hover:translate-x-3 hover:bg-accent': !hasAnswered,
-              'translate-x-3': index === answer,
-              'bg-green-600/90 ': hasAnswered && index === question.correctOption,
-              'bg-red-700/90': index === answer && index !== question.correctOption,
-              // 'bg-red-500': hasAnswered && answer !== question.correctOption,
-            },
-          )}
+          className={clsx('justify-start rounded-full py-4 px-4 text-md transition duration-500 inline-flex', {
+            'hover:translate-x-3 hover:bg-primary': !hasAnswered,
+            'translate-x-3': index === answer,
+            'bg-green-600/90 ': hasAnswered && index === question.correctOption,
+            'bg-red-600/90': index === answer && index !== question.correctOption,
+            // 'bg-red-500': hasAnswered && answer !== question.correctOption,
+          })}
           disabled={answer !== null}
-          onClick={() => handleAnswer(index)}
+          onClick={() => handleAnswer!(index)}
         >
           {option}
         </Button>

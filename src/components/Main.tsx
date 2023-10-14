@@ -5,7 +5,7 @@ interface MainProps {
 }
 
 function Main({ children }: MainProps) {
-  return <main className="mx-auto mt-20 ">{children}</main>;
+  return <main className="mt-20 ">{children}</main>;
 }
 
 export default Main;

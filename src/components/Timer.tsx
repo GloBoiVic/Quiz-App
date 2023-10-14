@@ -8,13 +8,13 @@ function Timer() {
   const seconds = secondsRemaining! % 60;
   useEffect(() => {
     const timerId = setInterval(() => {
-      handleTimeRemaining();
+      handleTimeRemaining!();
     }, 1000);
 
     return () => clearInterval(timerId); // Cancel timer in clean up function
   }, [handleTimeRemaining]);
   return (
-    <div className="timer">
+    <div className="p-2 border rounded-md bg-default">
       {mins < 10 && '0'}
       {mins}:{seconds < 10 && '0'}
       {seconds}

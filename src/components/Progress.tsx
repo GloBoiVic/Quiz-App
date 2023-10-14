@@ -1,21 +1,19 @@
 import useQuiz from '../hooks/useQuiz';
 
+import { Progress as UiProgress } from '@nextui-org/react';
+
 function Progress() {
   const { index, totalQuestions, points, totalPoints, answer } = useQuiz();
   return (
-    <header className="grid gap-4 border place-content-between ">
-      <progress
-        max={totalQuestions}
-        className="w-full overflow-hidden rounded [&::-webkit-progress-bar]:bg-secondary border-gray-500 shadow-md [&::-webkit-progress-value]:bg-accent [&::-moz-progress-bar] col-span-2 "
-        value={index + Number(answer !== null)}
-      />
-      <p className="leading-7">
+    <>
+      <UiProgress size="lg" maxValue={totalQuestions} color="primary" value={index + Number(answer !== null)} />
+      <p className="mt-3 leading-7">
         Question <strong>{index + 1}</strong> / {totalQuestions}
       </p>
       <p className="leading-7">
         <strong>{points}</strong> / {totalPoints}
       </p>
-    </header>
+    </>
   );
 }
 
