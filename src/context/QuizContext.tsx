@@ -13,12 +13,12 @@ interface State {
   answer: number | null;
   highScore: number;
   secondsRemaining: number | null;
-  startQuiz?: Function;
-  handleAnswer?: Function;
-  handleNextQuestion?: Function;
-  handleEndScreen?: Function;
-  handleRestart?: Function;
-  handleTimeRemaining?: Function;
+  startQuiz?: () => void;
+  handleAnswer?: (answer: number) => void;
+  handleNextQuestion?: () => void;
+  handleEndScreen?: () => void;
+  handleRestart?: () => void;
+  handleTimeRemaining?: () => void;
 }
 
 const enum REDUCER_ACTION_TYPE {
