@@ -125,7 +125,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   useEffect(() => {
     async function fetchQuestions() {
       try {
-        const res = await fetch('http://localhost:8000/questions');
+        const res = await fetch('https://quiz-app-6nt6.onrender.com/questions');
         const data = await res.json();
         dispatch({ type: REDUCER_ACTION_TYPE.DATA_RECEIVED, payload: data });
       } catch (error) {
