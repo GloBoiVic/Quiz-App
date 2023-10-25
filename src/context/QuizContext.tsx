@@ -82,7 +82,7 @@ function reducer(state: State, action: ReducerAction): typeof initialState {
       };
 
     case REDUCER_ACTION_TYPE.NEXT_QUESTION:
-      return { ...state, index: state.index++, answer: null };
+      return { ...state, index: state.index + 1, answer: null };
 
     case REDUCER_ACTION_TYPE.FINISH: {
       return {
