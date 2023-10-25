@@ -19,7 +19,6 @@ function Options() {
             'translate-x-3': index === answer,
             'bg-green-600/90 ': hasAnswered && index === question.correctOption,
             'bg-red-600/90': index === answer && index !== question.correctOption,
-            // 'bg-red-500': hasAnswered && answer !== question.correctOption,
           })}
           disabled={answer !== null}
           onClick={() => handleAnswer!(index)}

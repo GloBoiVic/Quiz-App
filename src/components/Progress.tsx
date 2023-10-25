@@ -6,7 +6,13 @@ function Progress() {
   const { index, totalQuestions, points, totalPoints, answer } = useQuiz();
   return (
     <>
-      <UiProgress size="lg" maxValue={totalQuestions} color="primary" value={index + Number(answer !== null)} />
+      <UiProgress
+        size="lg"
+        maxValue={totalQuestions}
+        color="primary"
+        aria-label="progress"
+        value={index + Number(answer !== null)}
+      />
       <p className="mt-3 leading-7">
         Question <strong>{index + 1}</strong> / {totalQuestions}
       </p>

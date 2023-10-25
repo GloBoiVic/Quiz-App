@@ -16,7 +16,7 @@ function App() {
   const { status } = useQuiz();
 
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="h-screen mx-auto max-w-screen">
         <div className="container max-w-xl">
           <Header />
