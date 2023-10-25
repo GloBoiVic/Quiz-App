@@ -2,6 +2,8 @@ import { ReactNode, createContext, useEffect, useReducer } from 'react';
 import { TQuestion } from '../components/utils/types';
 
 const SECONDS_PER_QUESTION = 30;
+const API_KEY = '$2a$10$mXc40AQoa1kN3L5Icv3VAO7WZY5p5W19EEJFLydLB0rtbreZR9PuK';
+const BIN_ID = '65381da212a5d37659900489';
 
 interface State {
   questions: TQuestion[];
@@ -125,9 +127,15 @@ function QuizProvider({ children }: QuizProviderProps) {
   useEffect(() => {
     async function fetchQuestions() {
       try {
-        const res = await fetch('https://quiz-app-6nt6.onrender.com/questions');
+        // const res = await fetch('https://quiz-app-6nt6.onrender.com/questions');
+        // const data = await res.json();
+        const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+          headers: {
+            'X-Master-Key': API_KEY,
+          },
+        });
         const data = await res.json();
-        dispatch({ type: REDUCER_ACTION_TYPE.DATA_RECEIVED, payload: data });
+        dispatch({ type: REDUCER_ACTION_TYPE.DATA_RECEIVED, payload: data.record.questions });
       } catch (error) {
         dispatch({ type: REDUCER_ACTION_TYPE.DATA_FAILED });
       }
